@@ -1,31 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { AiFillAlipayCircle } from 'react-icons/ai';
 import { SiEthereum } from 'react-icons/si';
 import { BsInfoCircle} from 'react-icons/bs';
+import { TransactionContext } from '../context/TransactionContext';
 import Loader from './Loader';
 
 
+const Input=({ placeholder, name, type, value, handleChange})=> {
+    return (
+    <input 
+    placeholder={placeholder}
+    type={type}
+    step="0.0001"
+    value={value}
+    onChange={(e)=> handleChange(e, name)}
+    className="form-input"
+    />
+    );
+}
 const Welcome =()=> {
+    const { connectWallet, currentAccount, formData, handleChange, sendTransaction } = useContext(TransactionContext);
 
-    const Input=({ placeholder, name, type, value, handleChange})=> {
-        return (
-        <input 
-        placeholder={placeholder}
-        type={type}
-        step="0.0001"
-        value={value}
-        onChange={(e)=> handleChange(e, name)}
-        className="form-input"
-        />
-        );
-    }
 
-    const connectWalltet=()=> {
 
-    }
+    const handleSubmit=(e)=> {
+        const { addressTo, amount, keyword, message } = formData;
 
-    const handleSubmit=()=> {
+        e.preventDefault();
+        if(!addressTo || !amount || !keyword || !message) return;
 
+        sendTransaction();
     }
 
 
@@ -39,9 +43,10 @@ const Welcome =()=> {
                     <p>Explore the crypto world. Buy and sell
                         cryptocurrencies easily on Kryptommerce.
                     </p>
-                    <button type="submit" onClick={connectWalltet}>
+                    {!currentAccount &&(<button type="submit" onClick={connectWallet}>
                         Connect Wallet
-                    </button>
+                    </button>)
+                    }
                     <div className="features">
                         <div className="commonStyles" style={{borderTopLeftRadius: '25px'}}>
                             Reliability
@@ -87,25 +92,25 @@ const Welcome =()=> {
                         placeholder="Address To" 
                         name="addressTo" 
                         type="text"
-                        handleChange={()=> {}}
+                        handleChange={handleChange}
                         />
                         <Input 
                         placeholder="Amount (ETH)" 
                         name="amount" 
                         type="number"
-                        handleChange={()=> {}}
+                        handleChange={handleChange}
                         />
                         <Input 
                         placeholder="Keyword (Gif)" 
                         name="keyword" 
                         type="text"
-                        handleChange={()=> {}}
+                        handleChange={handleChange}
                         />
                         <Input 
                         placeholder="Enter Message" 
                         name="message" 
                         type="text"
-                        handleChange={()=> {}}
+                        handleChange={handleChange}
                         />
                         <div className="form-sub" />
 

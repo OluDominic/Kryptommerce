@@ -3,6 +3,7 @@ import { AiFillAlipayCircle } from 'react-icons/ai';
 import { SiEthereum } from 'react-icons/si';
 import { BsInfoCircle} from 'react-icons/bs';
 import { TransactionContext } from '../context/TransactionContext';
+import { shortenedAddres } from '../utils/shortenedAddress';
 import Loader from './Loader';
 
 
@@ -79,7 +80,7 @@ const Welcome =()=> {
                             </div>
                             <div className="block-add">
                                 <p className="add">
-                                    Address
+                                    {shortenedAddres(currentAccount)}
                                 </p>
                                 <p className="add-two">
                                     Ethereum

@@ -22,7 +22,7 @@ const Input=({ placeholder, name, type, value, handleChange})=> {
 const Welcome =()=> {
     const { connectWallet, currentAccount, formData, handleChange, sendTransaction } = useContext(TransactionContext);
 
-
+    console.log(!currentAccount)
 
     const handleSubmit=(e)=> {
         const { addressTo, amount, keyword, message } = formData;
@@ -44,10 +44,10 @@ const Welcome =()=> {
                     <p>Explore the crypto world. Buy and sell
                         cryptocurrencies easily on Kryptommerce.
                     </p>
-                    {!currentAccount &&(<button type="submit" onClick={connectWallet}>
+                    {!currentAccount && (<button type="submit" onClick={connectWallet}>
                         Connect Wallet
-                    </button>)
-                    }
+                    </button>
+                    )}
                     <div className="features">
                         <div className="commonStyles" style={{borderTopLeftRadius: '25px'}}>
                             Reliability

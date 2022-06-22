@@ -31,11 +31,11 @@ const TransactionCard=({ addressTo, addressFrom, timestamp, message, keyword, am
                         </>
                     )}
                     
-                    <img 
+                    {/* <img 
                         src={gifUrl || url}
                         alt="gif"
                         
-                    />
+                    /> */}
                     <div className="trans-timestamp">
                         <p className="timestamp">
                             {timestamp}

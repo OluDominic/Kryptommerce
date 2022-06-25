@@ -83,7 +83,7 @@ const Welcome =()=> {
                                     {shortenedAddres(currentAccount)}
                                 </p>
                                 <p className="add-two">
-                                    ETH {balance.slice(0, 10)}
+                                    {balance.slice(0, 10)} ETH
                                 </p>
                             </div>
                         </div>

@@ -620,6 +620,15 @@ body,
             flex-direction: row;
             margin-top: 15px;
             padding: 20px 16px 20px 16px;
+
+            .services-sub2 {
+    
+                h1 {
+                    color: black;
+                    padding: 0px 2px 0px 2px;
+                    font-size: 24px;
+                }
+            }
         }
         .services-sub-sub {
             display: flex;
@@ -768,18 +777,45 @@ body,
     .transactions {
 
         .trans-sub {
-            padding: 48px;
+            padding: 24px 16px 2px 16px;
+
+            h3 {
+                font-size: 24px;
+                margin: 2px auto 2px auto;
+            }
 
             .trans {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
                 align-items: center;
-                margin-top: 40px;
+                margin-top: 00px;
     
                 .transactionCard {
                     min-width: 270px;
                     max-width: 300px;
+
+                    .card {
+
+                        .card-trans {
+
+                            .trans-timestamp {
+                                background: black;
+                                padding: 12px;
+                                padding-left: 12px;
+                                padding-right: 12px;
+                                width: max-content;
+                                border-radius: 24px;
+                                margin-top: 15px;
+    
+                                .timestamp {
+                                    color: #37c7da;
+                                    font-weight: bold;
+    
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

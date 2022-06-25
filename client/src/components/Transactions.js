@@ -48,7 +48,7 @@ const TransactionCard=({ addressTo, addressFrom, timestamp, message, keyword, am
 }
 
 const Transactions =()=> {
-    const { currentAccount } = useContext(TransactionContext)
+    const { currentAccount, transactions } = useContext(TransactionContext)
     return(
         <div className="transactions">
             <div className="trans-sub">
@@ -59,7 +59,7 @@ const Transactions =()=> {
                 }
 
                 <div className="trans">
-                    {dummyData.reverse().map((transaction, i)=> (
+                    {transactions.reverse().map((transaction, i)=> (
                         <TransactionCard key={i} {...transaction} />
                     ))}
                 </div>

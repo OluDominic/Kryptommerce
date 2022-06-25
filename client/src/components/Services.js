@@ -6,14 +6,14 @@ import { RiHeart2Fill } from 'react-icons/ri';
 const ServiceCard =({color, title, icons, subtitle})=> {
     return (
         <div className="service-card">
-        <div style={{width: '40px', height: '40px', borderRadius: '50% 50%', justifyContent: 'center', alignItems: 'center', backgroundColor: `${color}` }}>
-           <div>{icons}</div> 
+            <div style={{width: '40px', height: '40px', borderRadius: '50% 50%', justifyContent: 'center', alignItems: 'center', backgroundColor: `${color}` }}>
+            <div>{icons}</div> 
+            </div>
+            <div className="title" style={{marginLeft: '20px', display: 'flex', flexDirection: 'column', flex: '1'}}>
+                <h1 style={{color: 'black'}}>{title}</h1>
+                <p style={{marginTop: '-10px', color: "black"}}>{subtitle}</p>
+            </div>
         </div>
-        <div className="title" style={{marginLeft: '20px', display: 'flex', flexDirection: 'column', flex: '1'}}>
-            <h1>{title}</h1>
-            <p style={{marginTop: '-10px'}}>{subtitle}</p>
-        </div>
-    </div>
     );
 }
 
@@ -34,18 +34,18 @@ const Services =()=> {
             <div className="services-sub-sub">
                 <ServiceCard 
                     title="Security Guaranteed"
-                    icons ={<BsShieldFillCheck fontSize={21} style={{color: 'white'}}/>}
+                    icons ={<BsShieldFillCheck fontSize={21} style={{color: 'rgb(46, 44, 44)'}}/>}
                     subtitle="Security is guaranteed. We always maintain privacy and the quality of our products."
                 />
                 <ServiceCard 
                     color='#89845F8'
                     title="Best exchange rates"
-                    icons ={<BiSearchAlt fontSize={21} style={{color: 'white'}}/>}
+                    icons ={<BiSearchAlt fontSize={21} style={{color: 'rgb(46, 44, 44)'}}/>}
                     subtitle="Security is guaranteed. We always maintain privacy and the quality of our products."
                 />
                 <ServiceCard 
                     title="Fastest transactions"
-                    icons ={<RiHeart2Fill fontSize={21} style={{color: 'white'}}/>}
+                    icons ={<RiHeart2Fill fontSize={21} style={{color: 'rgb(46, 44, 44)'}}/>}
                     subtitle="Security is guaranteed. We always maintain privacy and the quality of our products."
                 />
             </div>

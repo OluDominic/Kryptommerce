@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { AiFillAlipayCircle } from 'react-icons/ai';
 import { SiEthereum } from 'react-icons/si';
 import { BsInfoCircle} from 'react-icons/bs';
@@ -20,9 +20,7 @@ const Input=({ placeholder, name, type, value, handleChange})=> {
     );
 }
 const Welcome =()=> {
-    const { connectWallet, currentAccount, formData, handleChange, sendTransaction } = useContext(TransactionContext);
-
-    console.log(!currentAccount)
+    const { connectWallet, currentAccount, formData, handleChange, sendTransaction, isLoading, getBalance, balance } = useContext(TransactionContext);
 
     const handleSubmit=(e)=> {
         const { addressTo, amount, keyword, message } = formData;
@@ -33,7 +31,9 @@ const Welcome =()=> {
         sendTransaction();
     }
 
-
+    
+        getBalance(currentAccount)
+        
     return(
         <div className="welcome">
             <div className="welcome-one">
@@ -83,7 +83,7 @@ const Welcome =()=> {
                                     {shortenedAddres(currentAccount)}
                                 </p>
                                 <p className="add-two">
-                                    Ethereum
+                                    ETH {balance.slice(0, 10)}
                                 </p>
                             </div>
                         </div>
@@ -115,7 +115,7 @@ const Welcome =()=> {
                         />
                         <div className="form-sub" />
 
-                        {false ? 
+                        {isLoading ? 
                         (<Loader />) :
                          (
                             <button

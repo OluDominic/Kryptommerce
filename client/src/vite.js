@@ -1,0 +1,1 @@
+export const VITE_GIPHY_API = "hvtiVrGQurGwiUbrYuo2zjblZWRKE57P"
